@@ -30,7 +30,7 @@ minetest.register_node("geocache:block", {
 	on_punch = function(pos, node, puncher)
 	local meta = minetest.get_meta(pos) 
 	local date_str = os.date("%b %d %Y at %I:%M %p")
-		if not string.match(meta:get_string("log"), " "..puncher:get_player_name().." ") then
+		if not string.find(meta:get_string("log"), string.gsub(" "..puncher:get_player_name().." ", "%-", "%%%-")) then
 			meta:set_string("log", " "..puncher:get_player_name().." on "..date_str.." ,"..meta:get_string("log"))
 			meta:set_string(
 					"formspec", 
