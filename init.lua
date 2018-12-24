@@ -12,7 +12,7 @@ minetest.register_node("geocache:block", {
 	local date_str = os.date("%b %d %Y at %I:%M %p")
 		meta:set_string("owner",          placer:get_player_name() );
 		meta:set_string("infotext",       "Right click to view geocache log.  Punch to add your name. (Owned by "..placer:get_player_name()..")");
-		meta:set_string("log",   " "..placer:get_player_name().." on "..date_str.. );
+		meta:set_string("log",   " "..placer:get_player_name().." on "..date_str);
 		meta:set_string(
 					"formspec", 
 					"size[7,7]"..
